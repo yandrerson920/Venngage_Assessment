@@ -1,0 +1,45 @@
+{
+  "name": "icon-generator",
+  "version": "1.0.0",
+  "description": "AI-powered consistent icon set generator",
+  "main": "server/index.js",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "server:dev": "nodemon server/index.js",
+    "client:dev": "cd client && npm start",
+    "client:build": "cd client && npm run build",
+    "server": "node server/index.js",
+    "start": "node server/index.js",
+    "install-all": "npm install && cd client && npm install",
+    "build": "npm install && cd client && npm install && npm run client:build",
+    "test": "jest",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
+  "keywords": [
+    "icon",
+    "generator",
+    "AI",
+    "replicate"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^8.2.1",
+    "node-cache": "^5.1.2",
+    "p-retry": "^7.1.0",
+    "replicate": "^0.25.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.2"
+  }
+}
